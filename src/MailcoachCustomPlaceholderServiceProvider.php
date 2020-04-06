@@ -62,6 +62,7 @@ class MailcoachCustomPlaceholderServiceProvider extends ServiceProvider
 
     protected function bootViews() {
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'mailcoach');
+        return $this;
     }
 
     protected function bootRoutes()
