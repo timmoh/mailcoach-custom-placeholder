@@ -13,13 +13,13 @@ composer require timmoh/mailcoach-custom-placeholder
 Publish migrations & migrate.
 
 ```bash
-php artisan vendor:publish  --tag=mailcoach-api-migrations
+php artisan vendor:publish  --tag=mailcoach-custom-placeholder-migrations
 php artisan migrate
 ```
 
 ### Publish Views:
 ```bash
-php artisan vendor:publish  --tag=mailcoach-api-views
+php artisan vendor:publish  --tag=mailcoach-custom-placeholder-views
 ```
 
 ## Usage
