@@ -22,25 +22,24 @@ class MailcoachCustomPlaceholderServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__.'/../config/config.php' => config_path('mailcoach-custom-placeholder.php'),
-            ], 'config');
+            ], 'mailcoach-custom-placeholder-config');
 
             // Publishing the views.
             $this->publishes([
                 __DIR__.'/../resources/views' => resource_path('views/vendor/mailcoach'),
-            ], 'views');
+            ], 'mailcoach-custom-placeholder-views');
 
 
 
             // Publishing the translation files.
             $this->publishes([
                 __DIR__.'/../resources/lang' => resource_path('lang/vendor/mailcoach-custom-placeholder'),
-            ], 'lang');
+            ], 'mailcoach-custom-placeholder-lang');
 
             // Registering package commands.
             // $this->commands([]);
         }
     }
-
     /**
      * Register the application services.
      */
