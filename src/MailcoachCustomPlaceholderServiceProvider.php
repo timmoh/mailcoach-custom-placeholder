@@ -19,6 +19,13 @@ class MailcoachCustomPlaceholderServiceProvider extends ServiceProvider
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
 
+        $this->bootPublishables()
+            ->bootRoutes();
+
+
+    }
+
+    protected function bootPublishables(){
         if ($this->app->runningInConsole()) {
 
             $this->publishes([
@@ -44,7 +51,21 @@ class MailcoachCustomPlaceholderServiceProvider extends ServiceProvider
             // Registering package commands.
             // $this->commands([]);
         }
+        return $this;
     }
+    protected function bootRoutes()
+    {
+
+
+        Route::macro('mailcoachCustumPlaceholder', function (string $prefix = '') {
+            Route::prefix($prefix)->group(function () {
+                Route::middleware(config('mailcoach.middleware'))->group(__DIR__ . '/../routes/mailcoach-custom-palceholder.php');
+            });
+        });
+
+        return $this;
+    }
+
     /**
      * Register the application services.
      */
