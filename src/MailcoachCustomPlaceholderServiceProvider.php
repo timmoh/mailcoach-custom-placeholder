@@ -21,6 +21,7 @@ class MailcoachCustomPlaceholderServiceProvider extends ServiceProvider
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
 
         $this->bootPublishables()
+            ->bootViews()
             ->bootRoutes();
 
 
@@ -58,6 +59,11 @@ class MailcoachCustomPlaceholderServiceProvider extends ServiceProvider
         }
         return $this;
     }
+
+    protected function bootViews() {
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'mailcoach');
+    }
+
     protected function bootRoutes()
     {
         Route::macro('mailcoachCustomPlaceholder', function (string $prefix = '') {
