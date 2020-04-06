@@ -4,9 +4,9 @@ namespace Timmoh\MailcoachCustomPlaceholder\Http\App\Queries;
 
 use Spatie\Mailcoach\Http\App\Queries\Filters\FuzzyFilter;
 use Spatie\Mailcoach\Models\EmailList;
-use Spatie\Mailcoach\Models\Placeholder;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
+use Timmoh\MailcoachCustomPlaceholder\Models\Placeholder;
 
 class EmailListPlaceholdersQuery extends QueryBuilder {
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace Timmoh\MailcoachCustomPlaceholder\Http\App\Controllers\EmailLists;
+namespace Timmoh\MailcoachCustomPlaceholder\Http\App\Controllers;
 
 use Timmoh\MailcoachCustomPlaceholder\Http\App\Queries\EmailListPlaceholdersQuery;
-use Timmoh\MailcoachCustomPlaceholder\App\Requests\CreatePlaceholderRequest;
-use Timmoh\MailcoachCustomPlaceholder\App\Requests\UpdatePlaceholderRequest;
+use Timmoh\MailcoachCustomPlaceholder\Http\App\Requests\CreatePlaceholderRequest;
+use Timmoh\MailcoachCustomPlaceholder\Http\App\Requests\UpdatePlaceholderRequest;
 use Spatie\Mailcoach\Models\EmailList;
 use Timmoh\MailcoachCustomPlaceholder\Models\Placeholder;
 
@@ -61,7 +61,7 @@ class PlaceholdersController {
     }
 
     public function duplicate(EmailList $emailList, Placeholder $placeholder) {
-        /** @var \Spatie\Mailcoach\Models\Placeholder $duplicatePlaceholder */
+        /** @var \Timmoh\MailcoachCustomPlaceholder\Models\Placeholder $duplicatePlaceholder */
         $duplicatePlaceholder = Placeholder::create([
             'name'          => "Duplicate.{$placeholder->name}",
             'description'   => $placeholder->description,

@@ -1,6 +1,7 @@
 <?php
 
-use Timmoh\MailcoachCustomPlaceholder\Http\App\Controllers\EmailLists\PlaceholdersController;
+use Illuminate\Support\Facades\Route;
+use Timmoh\MailcoachCustomPlaceholder\Http\App\Controllers\PlaceholdersController;
 
 Route::prefix('email-lists')->group(function () {
     Route::prefix('{emailList}')->group(function () {
