@@ -20,6 +20,13 @@ class MailcoachCustomPlaceholderServiceProvider extends ServiceProvider
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
 
         if ($this->app->runningInConsole()) {
+
+            $this->publishes([
+                __DIR__.'/../config/config.php' => config_path('mailcoach-custom-placeholder.php'),
+                __DIR__.'/../resources/views' => resource_path('views/vendor/mailcoach'),
+                __DIR__.'/../resources/lang' => resource_path('lang'),
+            ], 'mailcoach-custom-placeholder');
+
             $this->publishes([
                 __DIR__.'/../config/config.php' => config_path('mailcoach-custom-placeholder.php'),
             ], 'mailcoach-custom-placeholder-config');
@@ -29,11 +36,9 @@ class MailcoachCustomPlaceholderServiceProvider extends ServiceProvider
                 __DIR__.'/../resources/views' => resource_path('views/vendor/mailcoach'),
             ], 'mailcoach-custom-placeholder-views');
 
-
-
             // Publishing the translation files.
             $this->publishes([
-                __DIR__.'/../resources/lang' => resource_path('lang/vendor/mailcoach-custom-placeholder'),
+                __DIR__.'/../resources/lang' => resource_path('lang'),
             ], 'mailcoach-custom-placeholder-lang');
 
             // Registering package commands.

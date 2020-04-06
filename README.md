@@ -17,8 +17,15 @@ php artisan vendor:publish  --tag=mailcoach-custom-placeholder-migrations
 php artisan migrate
 ```
 
-### Publish Views:
+### Publish Resources:
+All Resources:
 ```bash
+php artisan vendor:publish  --tag=mailcoach-custom-placeholder
+```
+Or Single:
+```bash
+php artisan vendor:publish  --tag=mailcoach-custom-placeholder-views
+php artisan vendor:publish  --tag=mailcoach-custom-placeholder-config
 php artisan vendor:publish  --tag=mailcoach-custom-placeholder-views
 ```
 
