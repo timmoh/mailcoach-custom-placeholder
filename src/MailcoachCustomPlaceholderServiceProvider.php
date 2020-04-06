@@ -51,6 +51,10 @@ class MailcoachCustomPlaceholderServiceProvider extends ServiceProvider
 
             // Registering package commands.
             // $this->commands([]);
+            $migrationName = 'create_mailcoach_placeholder';
+            $this->publishes([
+                __DIR__ . '/../database/migrations/' . $migrationName .'.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_' . $migrationName .'.php'),
+            ], 'mailcoach-custom-placeholder-migrations');
         }
         return $this;
     }
