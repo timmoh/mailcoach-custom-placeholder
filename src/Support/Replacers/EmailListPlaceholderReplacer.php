@@ -1,6 +1,6 @@
 <?php
 
-namespace Timmoh\MailcoachCustomPlaceholderSupport\Replacers;
+namespace Timmoh\MailcoachCustomPlaceholderSupport\Support\Replacers;
 
 use Spatie\Mailcoach\Models\Campaign;
 
