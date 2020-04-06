@@ -2,6 +2,7 @@
 
 namespace Timmoh\MailcoachCustomPlaceholder;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 class MailcoachCustomPlaceholderServiceProvider extends ServiceProvider
@@ -55,14 +56,11 @@ class MailcoachCustomPlaceholderServiceProvider extends ServiceProvider
     }
     protected function bootRoutes()
     {
-
-
-        Route::macro('mailcoachCustumPlaceholder', function (string $prefix = '') {
+        Route::macro('mailcoachCustomPlaceholder', function (string $prefix = '') {
             Route::prefix($prefix)->group(function () {
                 Route::middleware(config('mailcoach.middleware'))->group(__DIR__ . '/../routes/mailcoach-custom-palceholder.php');
             });
         });
-
         return $this;
     }
 
