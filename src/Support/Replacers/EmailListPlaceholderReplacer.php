@@ -4,7 +4,7 @@ namespace Timmoh\MailcoachCustomPlaceholder\Support\Replacers;
 
 use Spatie\Mailcoach\Models\Campaign;
 
-class EmailListPlaceholderReplacer implements Replacer
+class EmailListPlaceholderReplacer implements \Spatie\Mailcoach\Support\Replacers\Replacer
 {
     public function helpText(): array
     {

@@ -12,7 +12,7 @@ class PlaceholdersController {
 
     public function index(EmailList $emailList) {
         $placeholdersQuery = new EmailListPlaceholdersQuery($emailList);
-        return view('vendor.mailcoach.app.emailLists.placeholder.partials.index',
+        return view('mailcoach::app.emailLists.placeholder.partials.index',
             [
                 'emailList'              => $emailList,
                 'placeholders'           => $placeholdersQuery->paginate(),
@@ -34,7 +34,7 @@ class PlaceholdersController {
     }
 
     public function edit(EmailList $emailList, Placeholder $placeholder) {
-        return view('vendor.mailcoach.app.emailLists.placeholder.partials.edit',
+        return view('mailcoach::app.emailLists.placeholder.partials.edit',
             [
                 'emailList'   => $emailList,
                 'placeholder' => $placeholder,

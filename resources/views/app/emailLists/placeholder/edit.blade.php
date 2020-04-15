@@ -1,4 +1,4 @@
-@extends('vendor.mailcoach.app.emailLists.layouts.placeholder', ['placeholder' => $placeholder])
+@extends('mailcoach::app.emailLists.layouts.placeholder', ['placeholder' => $placeholder])
 
 @section('header')
     <nav>
