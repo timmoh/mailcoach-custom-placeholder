@@ -1,4 +1,4 @@
-@extends('mailcoach::app.emailLists.layouts.placeholder', ['placeholder' => $placeholder])
+@extends('vendor.mailcoach.app.emailLists.layouts.placeholder', ['placeholder' => $placeholder])
 
 @section('header')
     <nav>
@@ -26,22 +26,22 @@
 @endsection
 
 @section('placeholder')
-        <form
-            class="form-grid"
-            action="{{ route('mailcoach.emailLists.placeholder.edit', [$emailList, $placeholder]) }}"
-            method="POST"
-        >
-            @csrf
-            @method('PUT')
+    <form
+        class="form-grid"
+        action="{{ route('mailcoach.emailLists.placeholder.edit', [$emailList, $placeholder]) }}"
+        method="POST"
+    >
+        @csrf
+        @method('PUT')
 
-            <x-text-field label="Name" name="name" :value="$placeholder->name" required />
-            <x-text-field label="Description" name="description" :value="$placeholder->description" required />
-            <x-text-field label="Replacement" name="replace_value" :value="$placeholder->replace_value" placeholder="Replace with" />
+        <x-text-field label="Name" name="name" :value="$placeholder->name" required />
+        <x-text-field label="Description" name="description" :value="$placeholder->description" required />
+        <x-text-field label="Replacement" name="replace_value" :value="$placeholder->replace_value" placeholder="Replace with" />
 
-            <div class="form-buttons">
-                <button type="submit" class="button">
-                    <x-icon-label icon="fas fa-exchange-alt" text="Save placeholder" />
-                </button>
-            </div>
-        </form>
+        <div class="form-buttons">
+            <button type="submit" class="button">
+                <x-icon-label icon="fas fa-exchange-alt" text="Save placeholder" />
+            </button>
+        </div>
+    </form>
 @endsection
