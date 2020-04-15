@@ -57,7 +57,7 @@ class PlaceholdersController {
         $placeholder->delete();
 
         flash()->success("Placeholder ::{$placeholder->name}:: was deleted.");
-
+        Timmoh\MailcoachCustomPlaceholder\Support\Replacers\EmailListPlaceholderReplacer::class;
         return back();
     }
 
