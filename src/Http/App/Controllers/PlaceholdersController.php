@@ -12,7 +12,7 @@ class PlaceholdersController {
 
     public function index(EmailList $emailList) {
         $placeholdersQuery = new EmailListPlaceholdersQuery($emailList);
-        return view('mailcoach::app.emailLists.placeholder.index',
+        return view('vendor.mailcoach.app.emailLists.placeholder.partials.index',
             [
                 'emailList'              => $emailList,
                 'placeholders'           => $placeholdersQuery->paginate(),
@@ -21,19 +21,20 @@ class PlaceholdersController {
     }
 
     public function store(CreatePlaceholderRequest $request, EmailList $emailList) {
-        $placeholder = $emailList->placeholders()->create([
+
+        $placeholder = Placeholder::create([
             'name'          => $request->name,
             'description'   => $request->description,
             'replace_value' => $request->replace_value,
+            'email_list_id' => $emailList->id,
         ]);
-
         flash()->success("Placeholder ::{$placeholder->name}:: was created.");
 
         return back();
     }
 
     public function edit(EmailList $emailList, Placeholder $placeholder) {
-        return view('mailcoach::app.emailLists.placeholder.edit',
+        return view('vendor.mailcoach.app.emailLists.placeholder.partials.edit',
             [
                 'emailList'   => $emailList,
                 'placeholder' => $placeholder,
