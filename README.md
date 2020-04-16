@@ -1,6 +1,6 @@
 # Mailcoach Custom Placeholder
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+AddOn Spatie's awesome Mailcoach (https://mailcoach.app/): Use custom placeholder like ::foo:: invidual in every email List.
 
 ## Installation
 
@@ -13,20 +13,20 @@ composer require timmoh/mailcoach-custom-placeholder
 Publish migrations & migrate.
 
 ```bash
-php artisan vendor:publish  --tag=mailcoach-custom-placeholder-migrations
+php artisan vendor:publish --tag=mailcoach-custom-placeholder-migrations
 php artisan migrate
 ```
 
 ### Publish Resources:
 All Resources:
 ```bash
-php artisan vendor:publish  --tag=mailcoach-custom-placeholder
+php artisan vendor:publish --tag=mailcoach-custom-placeholder
 ```
 Or Single:
 ```bash
-php artisan vendor:publish  --tag=mailcoach-custom-placeholder-views
-php artisan vendor:publish  --tag=mailcoach-custom-placeholder-config
-php artisan vendor:publish  --tag=mailcoach-custom-placeholder-views
+php artisan vendor:publish --tag=mailcoach-custom-placeholder-views
+php artisan vendor:publish --tag=mailcoach-custom-placeholder-config
+php artisan vendor:publish --tag=mailcoach-custom-placeholder-views
 ```
 
 ## Usage
@@ -34,8 +34,8 @@ php artisan vendor:publish  --tag=mailcoach-custom-placeholder-views
 Add EmailListPlaceholderReplacer::class to config/mailcoach.php
 ```php
 'replacers' => [
-     ...
-     \TIMMOH\MailcoachCustomPlaceholderSupport\Support\Replacers\EmailListPlaceholderReplacer::class,
+     \Timmoh\MailcoachCustomPlaceholder\Support\Replacers\EmailListPlaceholderReplacer::class,
+    ...
 ],
 
 ```
