@@ -1,0 +1,17 @@
+<form class="form-grid" action="{{ route('mailcoach.emailLists.placeholder.store', $emailList) }}" method="POST">
+    @csrf
+
+    <x-text-field label="Name" name="name" required />
+    <x-text-field label="Description" name="description" required />
+
+    <x-text-field label="Replacement" name="replace_value" placeholder="Replace with" />
+
+    <div class="form-buttons">
+        <button class="button">
+            <x-icon-label icon="fas fa-exchange-alt" text="Create placeholder"/>
+        </button>
+        <button type="button" class="button-cancel" data-modal-dismiss>
+            @lang('Cancel')
+        </button>
+    </div>
+</form>
