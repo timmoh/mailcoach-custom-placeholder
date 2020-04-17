@@ -43,7 +43,7 @@ Extend Email List View:
 (```emailLists/layouts/partials/afterLastTab.blade.php```)
 ```php
 <x-navigation-item :href="route('mailcoach.emailLists.placeholders', $emailList)">
-    <x-icon-label icon="fa-cog" text="Placeholders" />
+    <x-icon-label icon="fa-exchange-alt" text="Placeholders" />
 </x-navigation-item>
 ```
 
