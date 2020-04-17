@@ -37,7 +37,14 @@ Add EmailListPlaceholderReplacer::class to config/mailcoach.php
      \Timmoh\MailcoachCustomPlaceholder\Support\Replacers\EmailListPlaceholderReplacer::class,
     ...
 ],
+```
 
+Extend Email List View:
+(```emailLists/layouts/partials/afterLastTab.blade.php```)
+```php
+<x-navigation-item :href="route('mailcoach.emailLists.placeholders', $emailList)">
+    <x-icon-label icon="fa-cog" text="Placeholders" />
+</x-navigation-item>
 ```
 
 ### Testing
