@@ -9,7 +9,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('mailcoach.emailLists', $placeholder->emailList) }}">
+                <a href="{{ route('mailcoach.emailLists.subscribers', $placeholder->emailList) }}">
                     <span class="breadcrumb">{{ $placeholder->emailList->name }}</span>
                 </a>
             </li>

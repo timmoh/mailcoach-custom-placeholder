@@ -11,7 +11,7 @@
             </a>
         </li>
         <li><a href="{{ route('mailcoach.emailLists.subscribers', $placeholder->emailList) }}"><span class="breadcrumb">{{ $placeholder->emailList->name }}</span></a></li>
-        <li><a href="{{ route('mailcoach.emailLists.segments', $placeholder->emailList) }}"><span class="breadcrumb">@lang('Placeholder')</span></a></li>
+        <li><a href="{{ route('mailcoach.emailLists', $placeholder->emailList) }}"><span class="breadcrumb">@lang('Placeholder')</span></a></li>
         @yield('breadcrumbs')
     </ul>
 </nav>

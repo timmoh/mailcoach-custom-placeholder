@@ -5,7 +5,7 @@
 
 @section('breadcrumbs')
     <li>
-        <a href="{{ route('mailcoach.emailLists', $emailList) }}">
+        <a href="{{ route('mailcoach.emailLists.subscribers', $emailList) }}">
             <span class="breadcrumb">{{ $emailList->name }}</span>
         </a>
     </li>
