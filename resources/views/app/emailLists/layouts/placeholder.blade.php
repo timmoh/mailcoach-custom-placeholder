@@ -7,7 +7,7 @@
     <ul class="breadcrumbs">
         <li>
             <a href="{{ route('mailcoach.emailLists') }}">
-                <span class="breadcrumb">Lists</span>
+                <span class="breadcrumb">@lang('Lists')</span>
             </a>
         </li>
         <li><a href="{{ route('mailcoach.emailLists.subscribers', $placeholder->emailList) }}"><span class="breadcrumb">{{ $placeholder->emailList->name }}</span></a></li>
@@ -21,7 +21,7 @@
 <nav class="tabs">
     <ul>
         <x-navigation-item :href="route('mailcoach.emailLists.placeholder.edit', [$placeholder->emailList, $placeholder])">
-            <x-icon-label icon="fas fa-exchange-alt" text="Placeholder details" />
+            <x-icon-label icon="fas fa-exchange-alt" :text="__('Placeholder details')" />
         </x-navigation-item>
     </ul>
 </nav>

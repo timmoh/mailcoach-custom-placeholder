@@ -5,7 +5,7 @@
 
 @section('breadcrumbs')
     <li>
-        <a href="{{ route('mailcoach.emailLists.subscribers', $emailList) }}">
+        <a href="{{ route('mailcoach.emailLists', $emailList) }}">
             <span class="breadcrumb">{{ $emailList->name }}</span>
         </a>
     </li>
@@ -17,16 +17,16 @@
 @section('emailList')
     <div class="table-actions">
         <button class="button" data-modal-trigger="create-placeholder">
-            <x-icon-label icon="fas fa-exchange-alt" text="Create placeholder"/>
+            <x-icon-label icon="fas fa-exchange-alt" :text="__('Create placeholder')"/>
         </button>
 
-        <x-modal title="Create placeholder" name="create-placeholder" :open="$errors->any()">
+        <x-modal :title="__('Create placeholder')" name="create-placeholder" :open="$errors->any()">
             @include('mailcoach::app.emailLists.placeholder.partials.create')
         </x-modal>
 
         @if($placeholders->count() || $searching)
             <div class="table-filters">
-                <x-search placeholder="Filter placeholders…"/>
+                <x-search :placeholder="__('Filter placeholders…')"/>
             </div>
         @endif
     </div>
@@ -62,7 +62,7 @@
                                     <x-form-button
                                         :action="route('mailcoach.emailLists.placeholder.duplicate', [$emailList, $placeholder])"
                                     >
-                                        <x-icon-label icon="fa-random" text="Duplicate" />
+                                        <x-icon-label icon="fa-random" :text="__('Duplicate')" />
                                     </x-form-button>
                                 </li>
                                 <li>

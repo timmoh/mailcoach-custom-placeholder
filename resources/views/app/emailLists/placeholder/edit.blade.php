@@ -9,7 +9,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('mailcoach.emailLists.placeholders', $placeholder->emailList) }}">
+                <a href="{{ route('mailcoach.emailLists', $placeholder->emailList) }}">
                     <span class="breadcrumb">{{ $placeholder->emailList->name }}</span>
                 </a>
             </li>
@@ -34,13 +34,14 @@
         @csrf
         @method('PUT')
 
-        <x-text-field label="Name" name="name" :value="$placeholder->name" required />
-        <x-text-field label="Description" name="description" :value="$placeholder->description" />
-        <x-text-field label="Replacement" name="replace_value" :value="$placeholder->replace_value" placeholder="Replace with" />
+        <x-text-field :label="__('Name')" name="name" :value="$placeholder->name" required />
+        <x-text-field :label="__('Description')" name="description" :value="$placeholder->description" />
+        <x-text-field :label="__('Replacement')" name="replace_value" :value="$placeholder->replace_value" :placeholder="__('Replace with')" />
+
 
         <div class="form-buttons">
             <button type="submit" class="button">
-                <x-icon-label icon="fas fa-exchange-alt" text="Save placeholder" />
+                <x-icon-label icon="fas fa-exchange-alt" :text="__('Save placeholder')" />
             </button>
         </div>
     </form>
