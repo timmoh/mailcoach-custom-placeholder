@@ -26,7 +26,7 @@ Or Single:
 ```bash
 php artisan vendor:publish --tag=mailcoach-custom-placeholder-views
 php artisan vendor:publish --tag=mailcoach-custom-placeholder-config
-php artisan vendor:publish --tag=mailcoach-custom-placeholder-views
+php artisan vendor:publish --tag=mailcoach-custom-placeholder-lang
 ```
 
 ## Usage
