@@ -2,7 +2,7 @@
     @csrf
 
     <x-text-field label="Name" name="name" required />
-    <x-text-field label="Description" name="description" required />
+    <x-text-field label="Description" name="description" />
 
     <x-text-field label="Replacement" name="replace_value" placeholder="Replace with" />
 

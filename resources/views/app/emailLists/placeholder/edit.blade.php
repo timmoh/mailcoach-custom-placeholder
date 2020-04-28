@@ -35,7 +35,7 @@
         @method('PUT')
 
         <x-text-field label="Name" name="name" :value="$placeholder->name" required />
-        <x-text-field label="Description" name="description" :value="$placeholder->description" required />
+        <x-text-field label="Description" name="description" :value="$placeholder->description" />
         <x-text-field label="Replacement" name="replace_value" :value="$placeholder->replace_value" placeholder="Replace with" />
 
         <div class="form-buttons">
