@@ -49,8 +49,8 @@
                             ::{{ $placeholder->name }}::
                         </a>
                     </td>
-                    <td class="hidden | md:table-cell">{{ $placeholder->description }}</td>
-                    <td class="">{{ $placeholder->replace_value }}</td>
+                    <td class="hidden | md:table-cell">{{ \Illuminate\Support\Str::of($placeholder->description)->limit(50, '...') }}</td>
+                    <td class="">{{ \Illuminate\Support\Str::of($placeholder->replace_value)->limit(50, '...') }}</td>
 
                     <td class="td-action">
                         <div class="dropdown" data-dropdown>
