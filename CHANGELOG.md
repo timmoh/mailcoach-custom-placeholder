@@ -2,6 +2,9 @@
 
 All notable changes to `mailcoach-custom-placeholder` will be documented in this file
 
+## 1.1.4 - 2020-04-28
+- bugfix: rule on update placeholder
+
 ## 1.1.3 - 2020-04-28
 - add multi language
 

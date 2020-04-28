@@ -15,7 +15,7 @@ class UpdatePlaceholderRequest extends FormRequest {
         $placeholder = $this->route()->parameter('placeholder');
 
         return [
-            'name' => [
+            'name'          => [
                 'required',
                 'min:3',
                 new PlaceholderNamingRule(),
@@ -23,6 +23,10 @@ class UpdatePlaceholderRequest extends FormRequest {
                     ->where('email_list_id', $emailList)
                     ->ignore($placeholder->id),
                 new ReservedPlaceholderRule($emailList),
+            ],
+            'replace_value' => [
+                'required',
+                'min:3',
             ],
         ];
     }
