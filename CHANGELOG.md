@@ -2,6 +2,9 @@
 
 All notable changes to `mailcoach-custom-placeholder` will be documented in this file
 
+## 1.1.5 - 2020-04-28
+- change text-field
+
 ## 1.1.4 - 2020-04-28
 - bugfix: rule on update placeholder
 

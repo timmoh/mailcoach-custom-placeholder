@@ -36,7 +36,7 @@
 
         <x-text-field :label="__('Name')" name="name" :value="$placeholder->name" required />
         <x-text-field :label="__('Description')" name="description" :value="$placeholder->description" />
-        <x-text-field :label="__('Replacement')" name="replace_value" :value="$placeholder->replace_value" :placeholder="__('Replace with')" />
+        <x-html-field :label="__('Replacement')" name="replace_value" :value="$placeholder->replace_value" :placeholder="__('Replace with')" />
 
 
         <div class="form-buttons">
