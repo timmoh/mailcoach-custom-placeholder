@@ -5,3 +5,11 @@ vendor
 coverage
 !/auth.json
 auth.json
+/.php_cs.cache
+.php_cs.cache
+node_modules
+mix-manifest.json
+.phpunit.result.cache
+.idea/
+.idea
+

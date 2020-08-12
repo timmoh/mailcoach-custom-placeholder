@@ -25,7 +25,7 @@ class EmailListPlaceholdersQuery extends QueryBuilder {
         $this
             ->where('email_list_id', $emailList->id)
             ->defaultSort('name')
-            ->allowedSorts('name', 'replace_value')
+            ->allowedSorts('name', 'replace_value','description')
             ->allowedFilters(
                 AllowedFilter::custom('search',
                     new FuzzyFilter(
