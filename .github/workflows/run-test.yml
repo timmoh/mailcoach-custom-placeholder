@@ -65,7 +65,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction --no-suggest --auth http-basic.satis.mailcoach.app ${{ secrets.SATIS_MAILCOACH_APP_USERNAME }} ${{ secrets.SATIS_MAILCOACH_APP_PASSWORD }}
+          composer config --auth http-basic.satis.mailcoach.app ${{ secrets.SATIS_MAILCOACH_APP_USERNAME }} ${{ secrets.SATIS_MAILCOACH_APP_PASSWORD }}
+          composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction --no-suggest
       - name: Execute tests
         run: vendor/bin/phpunit
         env:
