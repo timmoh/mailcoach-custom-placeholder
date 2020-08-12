@@ -65,7 +65,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update --auth http-basic.satis.mailcoach.app ${{ secrets.SATIS_MAILCOACH_APP_USERNAME }} ${{ secrets.SATIS_MAILCOACH_APP_PASSWORD }}
+          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
           composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction --no-suggest --auth http-basic.satis.mailcoach.app ${{ secrets.SATIS_MAILCOACH_APP_USERNAME }} ${{ secrets.SATIS_MAILCOACH_APP_PASSWORD }}
       - name: Execute tests
         run: vendor/bin/phpunit
