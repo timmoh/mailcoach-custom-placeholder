@@ -7,15 +7,16 @@ use Illuminate\Validation\Rule;
 use Timmoh\MailcoachCustomPlaceholder\Rules\PlaceholderNamingRule;
 use Timmoh\MailcoachCustomPlaceholder\Rules\ReservedPlaceholderRule;
 
-class UpdatePlaceholderRequest extends FormRequest {
-
-    public function rules(): array {
+class UpdatePlaceholderRequest extends FormRequest
+{
+    public function rules(): array
+    {
         $emailList = $this->route()->parameter('emailList');
 
         $placeholder = $this->route()->parameter('placeholder');
 
         return [
-            'name'          => [
+            'name' => [
                 'required',
                 'min:3',
                 new PlaceholderNamingRule(),

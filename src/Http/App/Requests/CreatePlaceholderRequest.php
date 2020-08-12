@@ -7,9 +7,10 @@ use Illuminate\Validation\Rule;
 use Timmoh\MailcoachCustomPlaceholder\Rules\PlaceholderNamingRule;
 use Timmoh\MailcoachCustomPlaceholder\Rules\ReservedPlaceholderRule;
 
-class CreatePlaceholderRequest extends FormRequest {
-
-    public function rules() {
+class CreatePlaceholderRequest extends FormRequest
+{
+    public function rules()
+    {
         $emailList = $this->route()->parameter('emailList');
 
         return [

@@ -5,7 +5,6 @@ use Spatie\Mailcoach\Models\EmailList;
 use Timmoh\MailcoachCustomPlaceholder\Models\Placeholder;
 
 $factory->define(Placeholder::class, function (Generator $faker) {
-
     return [
         'name' => Str::random(10),
         'description' => $faker->sentence,

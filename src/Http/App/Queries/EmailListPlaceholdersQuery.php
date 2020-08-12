@@ -8,9 +8,10 @@ use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
 use Timmoh\MailcoachCustomPlaceholder\Models\Placeholder;
 
-class EmailListPlaceholdersQuery extends QueryBuilder {
-
-    public function __construct(EmailList $emailList) {
+class EmailListPlaceholdersQuery extends QueryBuilder
+{
+    public function __construct(EmailList $emailList)
+    {
         /*$query = Placeholder::query()
             ->addSelect(['subscriber_count' => function (Builder $query) {
                 $query
@@ -25,12 +26,14 @@ class EmailListPlaceholdersQuery extends QueryBuilder {
         $this
             ->where('email_list_id', $emailList->id)
             ->defaultSort('name')
-            ->allowedSorts('name', 'replace_value','description')
+            ->allowedSorts('name', 'replace_value', 'description')
             ->allowedFilters(
-                AllowedFilter::custom('search',
+                AllowedFilter::custom(
+                    'search',
                     new FuzzyFilter(
                         'name'
-                    ))
+                    )
+                )
             );
     }
 }

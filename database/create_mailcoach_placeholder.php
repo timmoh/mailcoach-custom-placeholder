@@ -8,7 +8,6 @@ class CreateMailcoachPlaceholder extends Migration
 {
     public function up()
     {
-
         Schema::create('mailcoach_email_list_placeholders', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('email_list_id');
@@ -21,7 +20,6 @@ class CreateMailcoachPlaceholder extends Migration
                 ->foreign('email_list_id', 'email_list_placeholders_email_list_id_index')
                 ->references('id')->on('mailcoach_email_lists')
                 ->onDelete('cascade');
-
         });
     }
 }

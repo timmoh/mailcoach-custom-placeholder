@@ -5,8 +5,8 @@ namespace Timmoh\MailcoachCustomPlaceholder\Rules;
 use Illuminate\Contracts\Validation\Rule;
 use Spatie\Mailcoach\Models\EmailList;
 
-class ReservedPlaceholderRule implements Rule {
-
+class ReservedPlaceholderRule implements Rule
+{
     /** @var \Spatie\Mailcoach\Models\EmailList */
     protected EmailList $emailList;
 
@@ -22,19 +22,25 @@ class ReservedPlaceholderRule implements Rule {
         'unsubscribeUrl',
     ];
 
-    public function __construct(EmailList $emailList) {
+    public function __construct(EmailList $emailList)
+    {
         $this->emailList = $emailList;
     }
 
-    public function passes($attribute, $value) {
+    public function passes($attribute, $value)
+    {
         $this->attribute = $attribute;
-        return !in_array($value, $this->reservedPlacehodlers);
+
+        return ! in_array($value, $this->reservedPlacehodlers);
     }
 
-    public function message() {
-        return __('mailcoach::messages.email_list_reservedplaceholder',
+    public function message()
+    {
+        return __(
+            'mailcoach::messages.email_list_reservedplaceholder',
             [
                 'attribute' => $this->attribute,
-            ]);
+            ]
+        );
     }
 }
