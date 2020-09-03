@@ -31,7 +31,7 @@ jobs:
   run-tests:
     needs: fix-code-style
     runs-on: ubuntu-latest
-    
+
     services:
       redis:
         image: redis
@@ -42,20 +42,25 @@ jobs:
       fail-fast: true
       matrix:
         php: [7.4]
-        laravel: [7.*]
+        laravel: [7.*, 8.*]
         dependency-version: [prefer-stable]
         include:
           - laravel: 7.*
             testbench: 5.*
+            allow-failures: false
+          - laravel: 8.*
+            testbench: 6.*
+            allow-failures: true
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }}
-    
+    continue-on-error: ${{ matrix.allow-failures }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-    
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
