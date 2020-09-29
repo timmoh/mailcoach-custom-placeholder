@@ -33,6 +33,18 @@ php artisan vendor:publish --tag=mailcoach-custom-placeholder-config
 php artisan vendor:publish --tag=mailcoach-custom-placeholder-lang
 ```
 
+## Add Route
+File: `App\Providers\RouteServiceProvider`
+```php
+public function map() {
+...
+Route::mailcoachCustomPlaceholder($webPrefix);
+//or
+Route::mailcoachCustomPlaceholder('mailcoach');
+...
+}
+```
+
 ## Usage
 
 Add EmailListPlaceholderReplacer::class to config/mailcoach.php
