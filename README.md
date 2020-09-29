@@ -1,4 +1,8 @@
 # Mailcoach Custom Placeholder
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/timmoh/mailcoach-custom-placeholder.svg?style=flat-square)](https://packagist.org/packages/timmoh/mailcoach-custom-placeholder)
+![Test Status](https://img.shields.io/github/workflow/status/timmoh/mailcoach-custom-placeholder/run-tests?label=tests)
+![Code Style Status](https://img.shields.io/github/workflow/status/timmoh/mailcoach-custom-placeholder/Check%20&%20fix%20styling?label=code%20style)
+[![Total Downloads](https://img.shields.io/packagist/dt/timmoh/mailcoach-custom-placeholder.svg?style=flat-square)](https://packagist.org/packages/timmoh/mailcoach-custom-placeholder)
 
 AddOn Spatie's awesome Mailcoach (https://mailcoach.app/): Use custom placeholder like ::foo:: invidual in every email List.
 
