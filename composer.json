@@ -31,7 +31,12 @@
         "friendsofphp/php-cs-fixer": "^2.16",
         "fzaninotto/faker": "^1.9",
         "orchestra/testbench": "^5.3|^6.2",
-        "phpunit/phpunit": "^9.2"
+        "laravel/legacy-factories": "^1.0.4",
+        "phpunit/phpunit": "^9.2",
+        "spatie/phpunit-snapshot-assertions": "^4.0",
+        "spatie/test-time": "^1.1",
+        "predis/predis": "^1.1",
+        "symfony/var-dumper": "^5.0"
     },
     "autoload": {
         "psr-4": {
