@@ -9,28 +9,29 @@ use Spatie\Snapshots\MatchesSnapshots;
 use Timmoh\MailcoachCustomPlaceholder\Models\Placeholder;
 use Timmoh\MailcoachCustomPlaceholder\Tests\Support\MailcoachCustomPlaceholderTestCase;
 
-class MailcoachCustomPlaceholderTest extends MailcoachCustomPlaceholderTestCase {
-
+class MailcoachCustomPlaceholderTest extends MailcoachCustomPlaceholderTestCase
+{
     use MatchesSnapshots;
 
     /**
      * @test
      */
-    public function onereplacer() {
-        $faker           = app(Generator::class);
+    public function onereplacer()
+    {
+        $faker = app(Generator::class);
         $expectedContent = 'hello';
-        $html            = "::customreplace::";
+        $html = "::customreplace::";
 
         $expectedHtml = $this->htmlbody($expectedContent);
 
         $emailList = EmailList::create(['name' => $faker->title]);
         /** @var \Spatie\Mailcoach\Models\Campaign */
-        $campaign    = (new Campaign())->create([
-            'html'          => $html,
+        $campaign = (new Campaign())->create([
+            'html' => $html,
             'email_list_id' => $emailList->id,
         ]);
         $placeholder = Placeholder::firstOrCreate([
-            'name'          => 'customreplace',
+            'name' => 'customreplace',
             'replace_value' => $expectedContent,
             'email_list_id' => $emailList->id,
         ]);
@@ -43,24 +44,25 @@ class MailcoachCustomPlaceholderTest extends MailcoachCustomPlaceholderTestCase 
     /**
      * @test
      */
-    public function oservalreplacers() {
-        $faker           = app(Generator::class);
-        $replacers       = ['customreplace1' => 'hello', 'customreplace2' => 'world', 'customreplace4' => 'everything ok?'];
+    public function oservalreplacers()
+    {
+        $faker = app(Generator::class);
+        $replacers = ['customreplace1' => 'hello', 'customreplace2' => 'world', 'customreplace4' => 'everything ok?'];
         $expectedContent = 'helloworld::customreplace3::everything ok?';
-        $html            = "::customreplace1::::customreplace2::::customreplace3::::customreplace4::";
+        $html = "::customreplace1::::customreplace2::::customreplace3::::customreplace4::";
 
         $expectedHtml = $this->htmlbody($expectedContent);
 
         $emailList = EmailList::create(['name' => $faker->title]);
         /** @var \Spatie\Mailcoach\Models\Campaign */
         $campaign = (new Campaign())->create([
-            'html'          => $html,
+            'html' => $html,
             'email_list_id' => $emailList->id,
         ]);
 
         foreach ($replacers as $key => $value) {
             $placeholder = Placeholder::firstOrCreate([
-                'name'          => $key,
+                'name' => $key,
                 'replace_value' => $value,
                 'email_list_id' => $emailList->id,
             ]);

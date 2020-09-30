@@ -2,21 +2,18 @@
 
 namespace Timmoh\MailcoachCustomPlaceholder\Tests;
 
-use CreateJobBatchesTable;
 use CreateMailcoachPlaceholderTables;
 use CreateMailcoachTables;
-use CreateMediaTable;
-use CreateUsersTable;
-use CreateWebhookCallsTable;
 use Illuminate\Foundation\Testing\WithFaker;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Spatie\TestTime\TestTime;
 
-abstract class TestCase extends Orchestra {
-
+abstract class TestCase extends Orchestra
+{
     use WithFaker;
 
-    public function setUp(): void {
+    public function setUp(): void
+    {
         parent::setUp();
 
         $this->withFactories(__DIR__ . '/../database/factories');
@@ -24,21 +21,24 @@ abstract class TestCase extends Orchestra {
         TestTime::freeze();
     }
 
-    public function assertHtmlWithoutWhitespace(string $expected, string $actual) {
+    public function assertHtmlWithoutWhitespace(string $expected, string $actual)
+    {
         $expected = $this->stripWhitespace($expected);
-        $actual   = $this->stripWhitespace($actual);
+        $actual = $this->stripWhitespace($actual);
 
         $this->assertEquals($expected, $actual);
     }
 
-    private function stripWhitespace(string $text) {
+    private function stripWhitespace(string $text)
+    {
         $contentWithoutWhitespace = preg_replace('/\s/', '', $text);
         $contentWithoutWhitespace = str_replace(PHP_EOL, '', $contentWithoutWhitespace);
 
         return $contentWithoutWhitespace;
     }
 
-    public function assertMatchesHtmlSnapshotWithoutWhitespace(string $content) {
+    public function assertMatchesHtmlSnapshotWithoutWhitespace(string $content)
+    {
         $contentWithoutWhitespace = preg_replace('/\s/', '', $content);
 
         $contentWithoutWhitespace = str_replace(PHP_EOL, '', $contentWithoutWhitespace);
@@ -46,14 +46,15 @@ abstract class TestCase extends Orchestra {
         $this->assertMatchesHtmlSnapshot($contentWithoutWhitespace);
     }
 
-    protected function getEnvironmentSetUp($app) {
+    protected function getEnvironmentSetUp($app)
+    {
         $app['config']->set('database.default', 'sqlite');
         $app['config']->set(
             'database.connections.sqlite',
             [
-                'driver'   => 'sqlite',
+                'driver' => 'sqlite',
                 'database' => ':memory:',
-                'prefix'   => '',
+                'prefix' => '',
             ]
         );
 
