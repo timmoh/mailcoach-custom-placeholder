@@ -61,7 +61,7 @@ abstract class TestCase extends Orchestra
         include_once __DIR__ . '/../vendor/spatie/laravel-mailcoach/database/migrations/create_mailcoach_tables.php.stub';
         (new CreateMailcoachTables())->up();
 
-        //include_once __DIR__ . '/../database/migrations/create_mailcoach_placeholder_tables.php.stub';
+        include_once __DIR__ . '/../database/migrations/create_mailcoach_placeholder_tables.php.stub';
         (new CreateMailcoachPlaceholderTables())->up();
     }
 }
