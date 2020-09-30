@@ -15,11 +15,6 @@ class MailcoachCustomPlaceholderServiceProvider extends ServiceProvider
         /*
          * Optional methods to load your package assets
          */
-        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'mailcoach-custom-placeholder');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'mailcoach-custom-placeholder');
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
-
         $this->bootPublishables()
             ->bootViews()
             ->bootRoutes();
@@ -61,8 +56,7 @@ class MailcoachCustomPlaceholderServiceProvider extends ServiceProvider
             );
 
             // Registering package commands.
-            // $this->commands([]);
-            $migrationName = 'create_mailcoach_placeholder';
+            $migrationName = 'create_mailcoach_placeholder_tables';
             $this->publishes(
                 [
                 __DIR__ . '/../database/migrations/' . $migrationName . '.php.stub' => database_path('migrations/' . date(
