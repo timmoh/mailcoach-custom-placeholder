@@ -2,8 +2,9 @@
 
 All notable changes to `mailcoach-custom-placeholder` will be documented in this file
 
-## 1.1.9 - 2020-09-30
-- 
+## 3.0.0 - 2020-10-03
+- Support of mailcoach v3
+- added middleware
 
 ## 1.1.8 - 2020-09-30
 - add tests

@@ -34,14 +34,14 @@
         @csrf
         @method('PUT')
 
-        <x-text-field :label="__('Name')" name="name" :value="$placeholder->name" required />
-        <x-text-field :label="__('Description')" name="description" :value="$placeholder->description" />
-        <x-html-field :label="__('Replacement')" name="replace_value" :value="$placeholder->replace_value" :placeholder="__('Replace with')" />
+        <x-mailcoach::text-field :label="__('Name')" name="name" :value="$placeholder->name" required />
+        <x-mailcoach::text-field :label="__('Description')" name="description" :value="$placeholder->description" />
+        <x-mailcoach::html-field :label="__('Replacement')" name="replace_value" :value="$placeholder->replace_value" :placeholder="__('Replace with')" />
 
 
         <div class="form-buttons">
             <button type="submit" class="button">
-                <x-icon-label icon="fas fa-exchange-alt" :text="__('Save placeholder')" />
+                <x-mailcoach::icon-label icon="fas fa-exchange-alt" :text="__('Save placeholder')" />
             </button>
         </div>
     </form>

@@ -6,6 +6,11 @@
 
 AddOn Spatie's awesome Mailcoach (https://mailcoach.app/): Use custom placeholder like ::foo:: invidual in every email List.
 
+## Version / Tagging
+Tagging & Version goes along with mailcoach
+
+- Mailcoach v3 = Mailcoach Custom Placeholder (master/3.x)
+
 ## Installation
 
 You can install the package via composer:
