@@ -7,7 +7,6 @@ use Spatie\Mailcoach\Domain\Audience\Models\EmailList;
 
 class ReservedPlaceholderRule implements Rule
 {
-
     /**
      * @var EmailList
      */

@@ -2,6 +2,7 @@
 
 namespace Timmoh\MailcoachCustomPlaceholder\Tests\Support;
 
+use \Spatie\Mailcoach\Domain\Campaign\Exceptions\CouldNotSendCampaign;
 use DOMDocument;
 use Exception;
 use Illuminate\Support\Str;
@@ -9,7 +10,6 @@ use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use RegexIterator;
 use Spatie\Mailcoach\Domain\Campaign\Models\Campaign;
-use \Spatie\Mailcoach\Domain\Campaign\Exceptions\CouldNotSendCampaign;
 
 use Spatie\Mailcoach\Domain\Campaign\Support\Replacers\ReplacerWithHelpText;
 use Timmoh\MailcoachCustomPlaceholder\Tests\TestCase;

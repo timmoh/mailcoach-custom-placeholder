@@ -2,7 +2,6 @@
 
 namespace Timmoh\MailcoachCustomPlaceholder\Support\Replacers;
 
-
 use Spatie\Mailcoach\Domain\Campaign\Models\Campaign;
 
 use Spatie\Mailcoach\Domain\Campaign\Support\Replacers\CampaignReplacer;

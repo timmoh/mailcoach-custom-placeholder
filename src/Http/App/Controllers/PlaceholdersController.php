@@ -2,7 +2,6 @@
 
 namespace Timmoh\MailcoachCustomPlaceholder\Http\App\Controllers;
 
-
 use Spatie\Mailcoach\Domain\Audience\Models\EmailList;
 use Timmoh\MailcoachCustomPlaceholder\Http\App\Queries\EmailListPlaceholdersQuery;
 use Timmoh\MailcoachCustomPlaceholder\Http\App\Requests\CreatePlaceholderRequest;
@@ -70,6 +69,7 @@ class PlaceholdersController
         flash()->success("Placeholder ::{$placeholder->name}:: was deleted.");
         //Timmoh\MailcoachCustomPlaceholder\Support\Replacers\EmailListPlaceholderReplacer::class;
         EmailListPlaceholderReplacer::class;
+
         return back();
     }
 
