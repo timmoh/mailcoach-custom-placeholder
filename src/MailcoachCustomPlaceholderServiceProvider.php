@@ -78,7 +78,7 @@ class MailcoachCustomPlaceholderServiceProvider extends ServiceProvider
             'mailcoachCustomPlaceholder',
             function (string $prefix = '') {
                 Route::prefix($prefix)->group(function () {
-                    Route::middleware(config('mailcoach.middleware')['web'])->group(__DIR__ . '/../routes/mailcoach-custom-palceholder.php');
+                    Route::middleware(config('mailcoach.middleware')['web'])->group(__DIR__ . '/../routes/mailcoach-custom-placeholder.php');
                 });
             }
         );
