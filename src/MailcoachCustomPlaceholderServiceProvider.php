@@ -7,14 +7,8 @@ use Illuminate\Support\ServiceProvider;
 
 class MailcoachCustomPlaceholderServiceProvider extends ServiceProvider
 {
-    /**
-     * Bootstrap the application services.
-     */
     public function boot()
     {
-        /*
-         * Optional methods to load your package assets
-         */
         $this->bootPublishables()
             ->bootViews()
             ->bootRoutes();

@@ -2,11 +2,13 @@
 
 namespace Timmoh\MailcoachCustomPlaceholder\Http\App\Controllers;
 
-use Spatie\Mailcoach\Models\EmailList;
+
+use Spatie\Mailcoach\Domain\Audience\Models\EmailList;
 use Timmoh\MailcoachCustomPlaceholder\Http\App\Queries\EmailListPlaceholdersQuery;
 use Timmoh\MailcoachCustomPlaceholder\Http\App\Requests\CreatePlaceholderRequest;
 use Timmoh\MailcoachCustomPlaceholder\Http\App\Requests\UpdatePlaceholderRequest;
 use Timmoh\MailcoachCustomPlaceholder\Models\Placeholder;
+use Timmoh\MailcoachCustomPlaceholder\Support\Replacers\EmailListPlaceholderReplacer;
 
 class PlaceholdersController
 {
@@ -66,14 +68,14 @@ class PlaceholdersController
         $placeholder->delete();
 
         flash()->success("Placeholder ::{$placeholder->name}:: was deleted.");
-        Timmoh\MailcoachCustomPlaceholder\Support\Replacers\EmailListPlaceholderReplacer::class;
-
+        //Timmoh\MailcoachCustomPlaceholder\Support\Replacers\EmailListPlaceholderReplacer::class;
+        EmailListPlaceholderReplacer::class;
         return back();
     }
 
     public function duplicate(EmailList $emailList, Placeholder $placeholder)
     {
-        /** @var \Timmoh\MailcoachCustomPlaceholder\Models\Placeholder $duplicatePlaceholder */
+        /** @var Placeholder $duplicatePlaceholder */
         $duplicatePlaceholder = Placeholder::create([
             'name' => "Duplicate.{$placeholder->name}",
             'description' => $placeholder->description,

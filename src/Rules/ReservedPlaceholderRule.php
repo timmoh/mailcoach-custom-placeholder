@@ -3,11 +3,14 @@
 namespace Timmoh\MailcoachCustomPlaceholder\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
-use Spatie\Mailcoach\Models\EmailList;
+use Spatie\Mailcoach\Domain\Audience\Models\EmailList;
 
 class ReservedPlaceholderRule implements Rule
 {
-    /** @var \Spatie\Mailcoach\Models\EmailList */
+
+    /**
+     * @var EmailList
+     */
     protected EmailList $emailList;
 
     /** @var string */
