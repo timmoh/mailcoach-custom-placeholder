@@ -16,7 +16,7 @@ class ReservedPlaceholderRule implements Rule
     protected string $attribute;
 
     /** @var array */
-    protected array $reservedPlacehodlers = [
+    protected array $reservedPlaceholders = [
         'webviewUrl',
         'subscriber.first_name',
         'subscriber.email',
@@ -33,7 +33,7 @@ class ReservedPlaceholderRule implements Rule
     {
         $this->attribute = $attribute;
 
-        return ! in_array($value, $this->reservedPlacehodlers);
+        return ! in_array($value, $this->reservedPlaceholders);
     }
 
     public function message()
