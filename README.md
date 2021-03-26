@@ -63,9 +63,11 @@ Add EmailListPlaceholderReplacer::class to config/mailcoach.php
 Extend Email List View:
 (```emailLists/layouts/partials/afterLastTab.blade.php```)
 ```php
-<x-navigation-item :href="route('mailcoach.emailLists.placeholders', $emailList)">
-    <x-icon-label icon="fa-exchange-alt" text="Placeholders" />
-</x-navigation-item>
+<x-mailcoach::navigation-group icon="far fa-cog" :title="__('Placeholder')">
+    <x-mailcoach::navigation-item :href="route('mailcoach.emailLists.placeholders', $emailList)">
+        {{ __('Custom') }}
+    </x-mailcoach::navigation-item>
+</x-mailcoach::navigation-group>
 ```
 
 ### Testing
