@@ -11,6 +11,7 @@ use RecursiveIteratorIterator;
 use RegexIterator;
 use Spatie\Mailcoach\Domain\Campaign\Models\Campaign;
 
+use Spatie\Mailcoach\Domain\Campaign\Support\Replacers\CampaignReplacer;
 use Spatie\Mailcoach\Domain\Campaign\Support\Replacers\ReplacerWithHelpText;
 use Timmoh\MailcoachCustomPlaceholder\Tests\TestCase;
 
@@ -72,7 +73,7 @@ class MailcoachCustomPlaceholderTestCase extends TestCase
         $campaign->email_html = collect($this->replacerClasses)
             ->map(fn (string $className) => app($className))
             ->filter(fn (object $class) => $class instanceof ReplacerWithHelpText)
-            ->reduce(fn (string $html, Replacer $replacer) => $replacer->replace($html, $campaign), $campaign->email_html);
+            ->reduce(fn (string $html, CampaignReplacer $replacer) => $replacer->replace($html, $campaign), $campaign->email_html);
         $campaign->save();
     }
 
