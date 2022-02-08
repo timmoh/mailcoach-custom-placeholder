@@ -2,11 +2,12 @@
 
 namespace Timmoh\MailcoachCustomPlaceholder\Support\Replacers;
 
-use Spatie\Mailcoach\Models\Campaign;
-use Spatie\Mailcoach\Support\Replacers\Replacer;
+use Spatie\Mailcoach\Domain\Campaign\Models\Campaign;
+
+use Spatie\Mailcoach\Domain\Campaign\Support\Replacers\CampaignReplacer;
 use Timmoh\MailcoachCustomPlaceholder\Models\Placeholder;
 
-class EmailListPlaceholderReplacer implements Replacer
+class EmailListPlaceholderReplacer implements CampaignReplacer
 {
     public function helpText(): array
     {

@@ -1,31 +1,10 @@
-@extends('mailcoach::app.emailLists.layouts.placeholder', ['placeholder' => $placeholder])
+<x-mailcoach::layout-list
+    :title="$placeholder->name"
+    :originTitle="__('Placeholder')"
+    :originHref="route('mailcoach.emailLists.placeholders', ['emailList' => $emailList])"
+    :emailList="$emailList"
+>
 
-@section('header')
-    <nav>
-        <ul class="breadcrumbs">
-            <li>
-                <a href="{{ route('mailcoach.emailLists') }}">
-                    <span class="breadcrumb">@lang('Lists')</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('mailcoach.emailLists.subscribers', $placeholder->emailList) }}">
-                    <span class="breadcrumb">{{ $placeholder->emailList->name }}</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('mailcoach.emailLists.placeholders', $emailList) }}">
-                    <span class="breadcrumb">@lang('Placeholders')</span>
-                </a>
-            </li>
-            <li>
-                <span class="breadcrumb">{{ $placeholder->name }}</span>
-            </li>
-        </ul>
-    </nav>
-@endsection
-
-@section('placeholder')
     <form
         class="form-grid"
         action="{{ route('mailcoach.emailLists.placeholder.edit', [$emailList, $placeholder]) }}"
@@ -40,9 +19,7 @@
 
 
         <div class="form-buttons">
-            <button type="submit" class="button">
-                <x-mailcoach::icon-label icon="fas fa-exchange-alt" :text="__('Save placeholder')" />
-            </button>
+            <x-mailcoach::button :label="__('Save placeholder')" />
         </div>
     </form>
-@endsection
+</x-mailcoach::layout-list>

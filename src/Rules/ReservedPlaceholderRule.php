@@ -3,18 +3,20 @@
 namespace Timmoh\MailcoachCustomPlaceholder\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
-use Spatie\Mailcoach\Models\EmailList;
+use Spatie\Mailcoach\Domain\Audience\Models\EmailList;
 
 class ReservedPlaceholderRule implements Rule
 {
-    /** @var \Spatie\Mailcoach\Models\EmailList */
+    /**
+     * @var EmailList
+     */
     protected EmailList $emailList;
 
     /** @var string */
     protected string $attribute;
 
     /** @var array */
-    protected array $reservedPlacehodlers = [
+    protected array $reservedPlaceholders = [
         'webviewUrl',
         'subscriber.first_name',
         'subscriber.email',
@@ -31,7 +33,7 @@ class ReservedPlaceholderRule implements Rule
     {
         $this->attribute = $attribute;
 
-        return ! in_array($value, $this->reservedPlacehodlers);
+        return ! in_array($value, $this->reservedPlaceholders);
     }
 
     public function message()

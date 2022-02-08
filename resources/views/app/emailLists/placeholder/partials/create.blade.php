@@ -7,9 +7,7 @@
     <x-mailcoach::text-field :label="__('Replacement')" name="replace_value" :placeholder="__('Replace with')" />
 
     <div class="form-buttons">
-        <button class="button">
-            <x-mailcoach::icon-label icon="fas fa-exchange-alt" :text="__('Create placeholder')"/>
-        </button>
+        <x-mailcoach::button icon="fas fa-exchange-alt" :label="__('Create placeholder')"/>
         <button type="button" class="button-cancel" data-modal-dismiss>
             @lang('Cancel')
         </button>

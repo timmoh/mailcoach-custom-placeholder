@@ -4,9 +4,6 @@ namespace Timmoh\MailcoachCustomPlaceholder;
 
 use Illuminate\Support\Facades\Facade;
 
-/**
- * @see \Timmoh\MailcoachCustomPlaceholder\Skeleton\SkeletonClass
- */
 class MailcoachCustomPlaceholderFacade extends Facade
 {
     /**

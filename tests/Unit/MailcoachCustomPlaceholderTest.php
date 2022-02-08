@@ -3,8 +3,8 @@
 namespace Timmoh\MailcoachCustomPlaceholder\Tests\Unit;
 
 use Faker\Generator;
-use Spatie\Mailcoach\Models\Campaign;
-use Spatie\Mailcoach\Models\EmailList;
+use Spatie\Mailcoach\Domain\Audience\Models\EmailList;
+use Spatie\Mailcoach\Domain\Campaign\Models\Campaign;
 use Spatie\Snapshots\MatchesSnapshots;
 use Timmoh\MailcoachCustomPlaceholder\Models\Placeholder;
 use Timmoh\MailcoachCustomPlaceholder\Tests\Support\MailcoachCustomPlaceholderTestCase;
@@ -25,7 +25,7 @@ class MailcoachCustomPlaceholderTest extends MailcoachCustomPlaceholderTestCase
         $expectedHtml = $this->htmlbody($expectedContent);
 
         $emailList = EmailList::create(['name' => $faker->title]);
-        /** @var \Spatie\Mailcoach\Models\Campaign */
+        /** @var Campaign */
         $campaign = (new Campaign())->create([
             'html' => $html,
             'email_list_id' => $emailList->id,
@@ -54,7 +54,7 @@ class MailcoachCustomPlaceholderTest extends MailcoachCustomPlaceholderTestCase
         $expectedHtml = $this->htmlbody($expectedContent);
 
         $emailList = EmailList::create(['name' => $faker->title]);
-        /** @var \Spatie\Mailcoach\Models\Campaign */
+        /** @var Campaign */
         $campaign = (new Campaign())->create([
             'html' => $html,
             'email_list_id' => $emailList->id,

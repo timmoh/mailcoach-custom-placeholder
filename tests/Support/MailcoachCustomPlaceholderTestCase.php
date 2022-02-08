@@ -2,15 +2,17 @@
 
 namespace Timmoh\MailcoachCustomPlaceholder\Tests\Support;
 
+use \Spatie\Mailcoach\Domain\Campaign\Exceptions\CouldNotSendCampaign;
 use DOMDocument;
 use Exception;
 use Illuminate\Support\Str;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use RegexIterator;
-use Spatie\Mailcoach\Exceptions\CouldNotSendCampaign;
-use Spatie\Mailcoach\Models\Campaign;
-use Spatie\Mailcoach\Support\Replacers\Replacer;
+use Spatie\Mailcoach\Domain\Campaign\Models\Campaign;
+
+use Spatie\Mailcoach\Domain\Campaign\Support\Replacers\CampaignReplacer;
+use Spatie\Mailcoach\Domain\Campaign\Support\Replacers\ReplacerWithHelpText;
 use Timmoh\MailcoachCustomPlaceholder\Tests\TestCase;
 
 class MailcoachCustomPlaceholderTestCase extends TestCase
@@ -70,8 +72,8 @@ class MailcoachCustomPlaceholderTestCase extends TestCase
 
         $campaign->email_html = collect($this->replacerClasses)
             ->map(fn (string $className) => app($className))
-            ->filter(fn (object $class) => $class instanceof Replacer)
-            ->reduce(fn (string $html, Replacer $replacer) => $replacer->replace($html, $campaign), $campaign->email_html);
+            ->filter(fn (object $class) => $class instanceof ReplacerWithHelpText)
+            ->reduce(fn (string $html, CampaignReplacer $replacer) => $replacer->replace($html, $campaign), $campaign->email_html);
         $campaign->save();
     }
 
