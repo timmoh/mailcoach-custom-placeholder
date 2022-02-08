@@ -22,6 +22,7 @@
         }
     ],
     "prefer-stable": true,
+    "minimum-stability": "dev",
     "require": {
         "php": "^8.0|^8.1",
         "illuminate/support": "^9.0",
