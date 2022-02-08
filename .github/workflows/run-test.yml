@@ -16,11 +16,13 @@ jobs:
             fail-fast: false
             matrix:
                 php: [8.0, 8.1]
-                laravel: [8.*]
+                laravel: [8.*,9.*]
                 dependency-version: [prefer-stable]
                 include:
                     - laravel: 8.*
                       testbench: 6.*
+                    - laravel: 9.*
+                      testbench: 7.*
 
         name: P${{ matrix.php }}
 
@@ -42,6 +44,7 @@ jobs:
                   mysql  -u root -proot -e 'CREATE DATABASE IF NOT EXISTS mailcoach_tests;'
             - name: Install dependencies
               run: |
+                  composer config --auth http-basic.satis.mailcoach.app ${{ secrets.SATIS_MAILCOACH_APP_USERNAME }} ${{ secrets.SATIS_MAILCOACH_APP_PASSWORD }}
                   composer update --prefer-dist --no-interaction --no-suggest
             - name: Execute tests
               run: composer test
