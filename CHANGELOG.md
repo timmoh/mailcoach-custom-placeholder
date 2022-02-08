@@ -2,6 +2,14 @@
 
 All notable changes to `mailcoach-custom-placeholder` will be documented in this file
 
+## 3.0.0 - 2022-02-08
+- Support of mailcoach v5
+- support laravel 9
+
+## 4.0.0 - 2021-03-27
+- Support of mailcoach v4
+- added middleware
+
 ## 3.0.0 - 2020-10-03
 - Support of mailcoach v3
 - added middleware
